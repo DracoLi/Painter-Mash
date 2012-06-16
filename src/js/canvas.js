@@ -1,9 +1,7 @@
 window.onload = function() {
-	var canvas = document.getElementById("paint-img");
 	//var context = canvas.getContext("2d");
 	
-
-	loadStage();
+	initialize();
 	addBackground("miro_normal");
 	addImage("miro_icon");
 	addImage("rothko_icon");
@@ -20,6 +18,18 @@ window.onload = function() {
 	}
 	*/	
 };
+
+function initialize() {
+	buttonDown = false;
+	draw = true;
+	loadStage();
+	canvas = layer.getCanvas();
+	context = canvas.getContext("2d");
+	canvas.addEventListener('mousedown', startPaint, false);
+	canvas.addEventListener('mousemove', continuePaint, false);
+	canvas.addEventListener('mouseup', stopPaint, false);
+
+}
 
 function loadStage() {
 	stage = new Kinetic.Stage("stage", 320, 480);
@@ -57,8 +67,8 @@ window.addImage = function(imageName) {
 }
 
 window.addBackground = function(imageName) {
-	$("menu").hide();
-	$("stage").show();
+	$("#other").hide();
+	$("#stage").show();
 	var imageObj = new Image();
 	imageObj.src = "resources/" + imageName + ".png"
 
@@ -76,6 +86,40 @@ window.addBackground = function(imageName) {
 	layer.add(kinImgObject);
 	stage.clear();
 	stage.add(layer);
+}
+
+
+window.exportImage = function() {
+	var canvas = layer.getCanvas();
+	var canvasData = canvas.getDataUrl();
+	var ajax = new XMLHttpRequest();
+	ajax.open("POST",'http://simple_planet_5852.herokuapp.com/painter',false);
+	ajax.setRequestHeader('Content-Type', 'application/upload');
+	ajax.send("image="+canvasData);
+}
+
+
+function startPaint(evt) {
+	if(!buttonDown && draw)
+	{               
+		context.beginPath();
+		context.moveTo(evt.x, evt.y);
+		buttonDown = true;
+	}            
+	evt.preventDefault();
+}
+
+
+function continuePaint(evt) {
+	if(buttonDown && draw)
+	{                            
+		context.lineTo(evt.x,evt.y);
+		context.stroke();
+	}
+}
+
+function stopPaint(evt) {
+	buttonDown =false;
 }
 
 /*
