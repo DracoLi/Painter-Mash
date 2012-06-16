@@ -24,13 +24,13 @@ $ ->
     free_html: """
       <div class="paint">
         <div class="paint_image">
-          <img src="" />
+          <a href="" data-rel="dialog"><img src="" /></a>
         </div>
         <div class="paint_description">
         
         </div>
       
-        <button>Use This</button>
+        <button class="btn">Use This</a>
       </div>
     """
     paid_html: """
@@ -42,7 +42,7 @@ $ ->
           
         </div>
         <div class="paint_price"></div>
-        <button>Use This</button>
+        <button class="btn">Use This</a>
       </div>
     """
     add_free: (paint) ->
@@ -63,7 +63,6 @@ $ ->
       new_paint
       
   paintManager = new PaintingManager
-
   for paint in paintings.free_paintings
     paintManager.add_free paint
   for paint in paintings.paid_paintings
