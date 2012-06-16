@@ -10,20 +10,18 @@
 
       Objects.prototype.paid_objects = [];
 
-      Objects.prototype.add_free = function(icon, description) {
+      Objects.prototype.add_free = function(icon) {
         var paint;
         paint = {
-          icon: icon,
-          description: description
+          icon: icon
         };
         return this.free_objects.push(paint);
       };
 
-      Objects.prototype.add_paid = function(icon, description, price) {
+      Objects.prototype.add_paid = function(icon, price) {
         var paint;
         paint = {
           icon: icon,
-          description: description,
           price: price
         };
         return this.paid_objects.push(paint);
@@ -33,10 +31,11 @@
 
     })();
     objects = new Objects;
-    objects.add_free('miro', 'micro finance');
-    objects.add_free('magritte', 'smock alot');
-    objects.add_paid('mondrian', 'mandarin', 3000);
-    objects.add_paid('rothko', 'rock is cool', 5000);
+    objects.add_free('MonaLisa');
+    objects.add_free('TheScream');
+    objects.add_free('BalloonGirl');
+    objects.add_paid('SonOfMan', "20M");
+    objects.add_paid('GirlWithPearlEarring', "30M");
     ObjectsManager = (function() {
 
       function ObjectsManager() {}
@@ -66,10 +65,9 @@
       };
 
       ObjectsManager.prototype.add_general = function(paint, html) {
-        var description, icon, new_paint;
-        description = paint.description, icon = paint.icon;
+        var icon, new_paint;
+        icon = paint.icon;
         new_paint = $(html).clone();
-        $(new_paint).find('.object_description').html(description);
         $(new_paint).find('.object_image img').attr('src', "resources/" + icon + "_icon.png");
         $(new_paint).find('.object_image a').attr('href', "resources/" + icon + ".html");
         $(new_paint).find('.btn').click(function() {
@@ -93,14 +91,13 @@
       paint = _ref2[_j];
       objectManager.add_paid(paint);
     }
-    console.log('binding');
-    $('#objectsView').click(function() {
+    $('#openObjects').click(function() {
       $('#paintingsView').hide();
       $('#objectsView').show();
       $('#stage').hide();
       return console.log('objectsView');
     });
-    $('#paintingsView').click(function() {
+    $('#openBackground').click(function() {
       $('#paintingsView').show();
       $('#objectsView').hide();
       $('#stage').hide();

@@ -3,17 +3,18 @@ $ ->
   class Objects
     free_objects: []
     paid_objects: []
-    add_free: (icon, description) ->
-      paint = {icon: icon, description: description}
+    add_free: (icon) ->
+      paint = {icon: icon}
       @free_objects.push paint
-    add_paid: (icon, description, price) ->
-      paint = {icon: icon, description: description, price: price}
+    add_paid: (icon, price) ->
+      paint = {icon: icon, price: price}
       @paid_objects.push paint
   objects = new Objects
-  objects.add_free 'miro', 'micro finance'
-  objects.add_free 'magritte', 'smock alot'
-  objects.add_paid 'mondrian', 'mandarin', 3000
-  objects.add_paid 'rothko', 'rock is cool', 5000
+  objects.add_free 'MonaLisa'
+  objects.add_free 'TheScream'
+  objects.add_free 'BalloonGirl'
+  objects.add_paid 'SonOfMan', "20M"
+  objects.add_paid 'GirlWithPearlEarring', "30M"
   
   class ObjectsManager
     free_selector: $('#free_objects .objects')
@@ -48,9 +49,8 @@ $ ->
       @paid_selector.append new_paint
       console.log new_paint
     add_general: (paint, html) ->
-      {description, icon} = paint
+      {icon} = paint
       new_paint = $(html).clone()
-      $(new_paint).find('.object_description').html description
       $(new_paint).find('.object_image img').attr 'src', "resources/#{icon}_icon.png"
       $(new_paint).find('.object_image a').attr 'href', "resources/#{icon}.html"
       $(new_paint).find('.btn').click ->
@@ -65,14 +65,13 @@ $ ->
   for paint in objects.paid_objects
     objectManager.add_paid paint
     
-  console.log 'binding'
   # handle navigation
-  $('#objectsView').click ->
+  $('#openObjects').click ->
     $('#paintingsView').hide()
     $('#objectsView').show()
     $('#stage').hide()
     console.log 'objectsView'
-  $('#paintingsView').click ->
+  $('#openBackground').click ->
     $('#paintingsView').show()
     $('#objectsView').hide()
     $('#stage').hide()
