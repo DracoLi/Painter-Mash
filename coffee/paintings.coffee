@@ -1,5 +1,5 @@
 $ ->
-  
+    
   class Paintings
     free_paintings: []
     paid_paintings: []
@@ -26,20 +26,13 @@ $ ->
         <div class="paint_image">
           <a href="" data-rel="dialog"><img src="" /></a>
         </div>
-        <div class="paint_description">
-        
-        </div>
-      
         <button class="btn">Use This</a>
       </div>
     """
     paid_html: """
       <div class="paint">
         <div class="paint_image">
-          <img src="" />
-        </div>
-        <div class="paint_description">
-          
+          <a href="" data-rel="dialog"><img src="" /></a>
         </div>
         <div class="paint_price"></div>
         <button class="btn">Use This</a>
@@ -60,8 +53,13 @@ $ ->
       new_paint = $(html).clone()
       $(new_paint).find('.paint_description').html description
       $(new_paint).find('.paint_image img').attr 'src', "resources/#{icon}_icon.png"
+      $(new_paint).find('.paint_image a').attr 'href', "resources/#{icon}.html"
+      $(new_paint).click ->
+        console.log "add this background: #{icon}"
+        window.addBackground icon
       new_paint
-      
+  
+  # Load the paintings
   paintManager = new PaintingManager
   for paint in paintings.free_paintings
     paintManager.add_free paint
