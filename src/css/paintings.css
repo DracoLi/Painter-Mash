@@ -1,0 +1,22 @@
+.paint,
+.object {
+  margin: 20px 0;
+  float: left;
+  margin-left: 30px;
+}
+.paint .paint_image,
+.object .paint_image,
+.paint .object_image,
+.object .object_image {
+  margin-bottom: 10px;
+}
+.paint .paint_price,
+.object .paint_price,
+.paint .object_price,
+.object .object_price {
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 5px;
+  margin-top: -5px;
+  color: red;
+}
