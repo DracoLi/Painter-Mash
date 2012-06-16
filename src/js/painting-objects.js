@@ -110,7 +110,8 @@
       return console.log('paintingsView');
     });
     $('#shareButton').click(function() {
-      return window.exportImage();
+      $(this).addClass('ui-disabled');
+      return $(this).find('.ui-btn-text').html('Shared');
     });
     return window.revertNavigation = function() {
       $('#paintingsView').hide();
