@@ -2,6 +2,7 @@ window.onload = function() {
 	//var context = canvas.getContext("2d");
 	
 	initialize();
+	
 	addBackground("miro");
 	addImage("miro");
 	addImage("rothko");

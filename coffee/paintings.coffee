@@ -10,10 +10,15 @@ $ ->
       paint = {icon: icon, description: description, price: price}
       @paid_paintings.push paint
   paintings = new Paintings
-  paintings.add_free 'miro', 'micro finance'
-  paintings.add_free 'magritte', 'smock alot'
-  paintings.add_paid 'mondrian', 'mandarin', 3000
-  paintings.add_paid 'rothko', 'rock is cool', 5000
+  paintings.add_free 'Fugue'
+  paintings.add_free 'ShadesOfEternalNight'
+  paintings.add_free 'Aglow'
+  paintings.add_free 'Dancer'
+  paintings.add_paid 'ATreeInNaples', "40M"
+  paintings.add_paid 'CompositionNo8', "25M"
+  paintings.add_paid 'LeGuitariste', "80M"
+  paintings.add_paid 'TheHumanCondition', "20M"
+  paintings.add_paid 'UntitledYellowRedBlue', "35M"
   
   class PaintingManager
   
@@ -49,9 +54,8 @@ $ ->
       @paid_selector.append new_paint
       console.log new_paint
     add_general: (paint, html) ->
-      {description, icon} = paint
+      {icon} = paint
       new_paint = $(html).clone()
-      $(new_paint).find('.paint_description').html description
       $(new_paint).find('.paint_image img').attr 'src', "resources/#{icon}_icon.png"
       $(new_paint).find('.paint_image a').attr 'href', "resources/#{icon}.html"
       $(new_paint).click ->
