@@ -1,32 +1,45 @@
-class PaintingManager
+$ ->
   
-  $free_selector: $('#free_paintings')
+  class Paintings
+    paintings: []
+    add_panting: (icon, description) ->
+      paint = {icon: icon, description: description}
+      @paintings.push paint
+  paintings = new Paintings
+  paintings.add_panting 'miro', 'micro finance'
+  paintings.add_panting 'magritte', 'smock alot'
+  paintings.add_panting 'mondrian', 'mandarin'
+  paintings.add_panting 'rothko', 'rock is cool'
+  
+  
+  class PaintingManager
+  
+    free_selector: $('#free_paintings .paintings')
     
-  $paid_selector: $('#paid_paintings')
+    $paid_selector: $('#paid_paintings .paintings')
   
-  paint_html: """
-    <div class="paint">
-      <div class="paint_image">
-        <img src=""/>
-      </div>
-      <div class="paint_description">
+    paint_html: """
+      <div class="paint">
+        <div class="paint_image">
+          <img src="" />
+        </div>
+        <div class="paint_description">
         
-      </div>
+        </div>
       
-      <button>Use This</button>
-    </div>
-  """
+        <button>Use This</button>
+      </div>
+    """
   
-  add_free: (paint) ->
-    {description, icon} = paint
-    new_paint = $(paint_html).clone
-    $(paint_html).children('.paint_description').html description
-    $(paint_html).children('.paint_image a').attr('src', "resources/#{icon}.png")
-    @$free_selector.append new_paint
-    console.log 'added new free'
+    add_free: (paint) ->
+      {description, icon} = paint
+      new_paint = $(@paint_html).clone()
+      $(new_paint).find('.paint_description').html description
+      $(new_paint).find('.paint_image img').attr 'src', "resources/#{icon}_icon.png"
+      @free_selector.append new_paint
+      console.log new_paint
     
-paintManager = new PaintingManager
+  paintManager = new PaintingManager
 
-paintManager.add_free 
-  description: "i like chicken"
-  icon: "paint"
+  for paint in paintings.paintings
+    paintManager.add_free paint
