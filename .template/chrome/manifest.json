@@ -1,7 +1,0 @@
-{
-	"name": "APP_NAME_HERE",
-	"version": "0.1",
-	"description": "DESCRIPTION_HERE",
-	"permissions": [],
-	"background_page": "forge.html"
-}

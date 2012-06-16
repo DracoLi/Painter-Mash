@@ -1,7 +1,0 @@
-{
-	"name": "Painter Mash",
-	"version": "0.1",
-	"description": "An empty app created by default",
-	"permissions": [],
-	"background_page": "forge.html"
-}
