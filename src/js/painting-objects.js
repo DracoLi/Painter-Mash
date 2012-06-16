@@ -1,7 +1,7 @@
 (function() {
 
   $(function() {
-    var Objects, ObjectsManager, objectManager, objects, paint, _i, _j, _len, _len2, _ref, _ref2, _results;
+    var Objects, ObjectsManager, objectManager, objects, paint, _i, _j, _len, _len2, _ref, _ref2;
     Objects = (function() {
 
       function Objects() {}
@@ -89,12 +89,29 @@
       objectManager.add_free(paint);
     }
     _ref2 = objects.paid_objects;
-    _results = [];
     for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
       paint = _ref2[_j];
-      _results.push(objectManager.add_paid(paint));
+      objectManager.add_paid(paint);
     }
-    return _results;
+    console.log('binding');
+    $('#objectsView').click(function() {
+      $('#paintingsView').hide();
+      $('#objectsView').show();
+      $('#stage').hide();
+      return console.log('objectsView');
+    });
+    $('#paintingsView').click(function() {
+      $('#paintingsView').show();
+      $('#objectsView').hide();
+      $('#stage').hide();
+      return console.log('paintingsView');
+    });
+    return window.revertNavigation = function() {
+      $('#paintingsView').hide();
+      $('#objectsView').hide();
+      $('#stage').show();
+      return console.log('revertNavigation');
+    };
   });
 
 }).call(this);
