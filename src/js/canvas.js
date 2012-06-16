@@ -5,7 +5,10 @@ window.onload = function() {
 	addBackground("miro_normal");
 	addImage("miro_icon");
 	addImage("rothko_icon");
-
+  
+  $('#shareButton').click(function() {
+    window.exportImage();
+  });
 	//var params = getUrlVars();
 	/*
 	if (params["painting"] != 'undefined' && params["painting"] != {}) {
