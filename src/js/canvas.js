@@ -2,7 +2,6 @@ window.onload = function() {
 	//var context = canvas.getContext("2d");
 	
 	initialize();
-	
 	addBackground("miro");
 	addImage("miro");
 	addImage("rothko");
@@ -27,6 +26,7 @@ function initialize() {
 	buttonDown = false;
 	draw = true;
 	loadStage();
+	pts = new Array();
 	canvas = layer.getCanvas();
 	$('canvas').css("position", "inherit");
 	context = canvas.getContext("2d");
@@ -116,12 +116,12 @@ window.exportImage = function() {
 function startPaint(evt) {
 	if(!buttonDown && draw)
 	{               
-		context.beginPath();
-		context.moveTo(evt.x, evt.y);
+		//context.beginPath();
+		//context.moveTo(evt.x, evt.y);
 		buttonDown = true;
-		points = new Array();
-		points.push(evt.x);
-		points.push(evt.y);
+		pts = new Array();
+		pts.push(evt.x);
+		pts.push(evt.y);
 	}            
 	evt.preventDefault();
 }
@@ -130,14 +130,20 @@ function startPaint(evt) {
 function continuePaint(evt) {
 	if(buttonDown && draw)
 	{                            
-		context.lineTo(evt.x,evt.y);
-		context.stroke();
-		var line = new Kinetic.Line({ points: points});
+		//context.lineTo(evt.x,evt.y);
+		//context.stroke();
+		pts.push(evt.x);
+		pts.push(evt.y);
+		var line = new Kinetic.Line({ points: pts});
+		layer.add(line);		
+		stage.clear();
+		stage.add(layer);
 	}
 }
 
 function stopPaint(evt) {
 	buttonDown =false;
+	
 }
 
 /*
