@@ -33,15 +33,15 @@ function initialize() {
 	canvas.addEventListener('mousedown', startPaint, false);
 	canvas.addEventListener('mousemove', continuePaint, false);
 	canvas.addEventListener('mouseup', stopPaint, false);
-	canvas.addEventListener('touchstart', startPaint, false);
-	canvas.addEventListener('touchmove', continuePaint, false);
-	canvas.addEventListener('touchend', stopPaint, false);
+	//canvas.addEventListener('touchstart', startPaint, false);
+	//canvas.addEventListener('touchmove', continuePaint, false);
+	//canvas.addEventListener('touchend', stopPaint, false);
 
 
 }
 
 function loadStage() {
-	stage = new Kinetic.Stage("innerStage", 320, 480);
+	stage = new Kinetic.Stage("container", 320, 480);
 	
         layer = new Kinetic.Layer();
 	stage.add(layer);
@@ -119,8 +119,8 @@ window.exportImage = function() {
 function startPaint(evt) {
 	if(!buttonDown && draw)
 	{               
-		//context.beginPath();
-		//context.moveTo(evt.x, evt.y);
+		context.beginPath();
+		context.moveTo(evt.x, evt.y);
 		buttonDown = true;
 		pts = new Array();
 		pts.push(evt.x);
@@ -133,14 +133,14 @@ function startPaint(evt) {
 function continuePaint(evt) {
 	if(buttonDown && draw)
 	{                            
-		//context.lineTo(evt.x,evt.y);
-		//context.stroke();
+		context.lineTo(evt.x,evt.y);
+		context.stroke();
 		pts.push(evt.x);
 		pts.push(evt.y);
-		var line = new Kinetic.Line({ points: pts});
-		layer.add(line);		
-		stage.clear();
-		stage.add(layer);
+		//var line = new Kinetic.Line({ points: pts});
+		//layer.add(line);		
+		//stage.clear();
+		//stage.add(layer);
 	}
 }
 
