@@ -7,7 +7,7 @@
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/canvas.js"></script>
-	<script src="http://www.html5canvastutorials.com/libraries/kinetic-v3.8.0.js">
+	<script src="http://www.html5canvastutorials.com/libraries/kinetic-v3.8.0.js"></script>
 </head>
 <body>
 
@@ -15,12 +15,14 @@
 	<div data-role="header">
 		<h1>Hello World!</h1>
 	</div><!-- /header -->
-	<div data-role="content">
+	<div data-role="content" style="width=320; height=480">
 		<a href="paintings.html">Go!</a>
+	<!--
 	<canvas id="paint-img" width=320 height=480>
 	This demo uses the HTML canvas object. You'll need a browser such as Firefox 2 or Safari to use the demo.
 	</canvas>
-	<div id="stage"></div>
+	-->
+	<div id="stage" width=320 height=480></div>
 	</div><!-- /content -->
 	<div data-role="footer">
 		<h4>Get in touch:
