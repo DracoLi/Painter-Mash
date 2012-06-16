@@ -4,8 +4,6 @@ window.onload = function() {
 	initialize();
 	
 	addBackground("TheHumanCondition");
-	addImage("MonaLisa");
-	addImage("TheScream");
   
   $('#shareButton').click(function() {
     window.exportImage();

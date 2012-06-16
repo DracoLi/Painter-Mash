@@ -102,6 +102,22 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
+.ui-mobile .ui-page.ui-body-c {
+  width: 365px;
+  margin-left: 35%;
+}
+.painterControls {
+  *zoom: 1;
+}
+.painterControls div {
+  float: left;
+  width: 150px;
+  margin-right: 10px;
+}
+.objects,
+.paint {
+  margin-left: -15px;
+}
 .paint,
 .object {
   margin: 20px 0;
