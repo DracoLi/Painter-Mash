@@ -32,6 +32,10 @@ function initialize() {
 	canvas.addEventListener('mousedown', startPaint, false);
 	canvas.addEventListener('mousemove', continuePaint, false);
 	canvas.addEventListener('mouseup', stopPaint, false);
+	canvas.addEventListener('touchstart', startPaint, false);
+	canvas.addEventListener('touchmove', continuePaint, false);
+	canvas.addEventListener('touchend', stopPaint, false);
+
 
 }
 
@@ -114,6 +118,9 @@ function startPaint(evt) {
 		context.beginPath();
 		context.moveTo(evt.x, evt.y);
 		buttonDown = true;
+		points = new Array();
+		points.push(evt.x);
+		points.push(evt.y);
 	}            
 	evt.preventDefault();
 }
@@ -124,6 +131,7 @@ function continuePaint(evt) {
 	{                            
 		context.lineTo(evt.x,evt.y);
 		context.stroke();
+		var line = new Kinetic.Line({ points: points});
 	}
 }
 
