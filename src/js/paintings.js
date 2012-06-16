@@ -45,9 +45,9 @@
 
       PaintingManager.prototype.paid_selector = $('#paid_paintings .paintings');
 
-      PaintingManager.prototype.free_html = "<div class=\"paint\">\n  <div class=\"paint_image\">\n    <img src=\"\" />\n  </div>\n  <div class=\"paint_description\">\n  \n  </div>\n\n  <button>Use This</button>\n</div>";
+      PaintingManager.prototype.free_html = "<div class=\"paint\">\n  <div class=\"paint_image\">\n    <a href=\"\" data-rel=\"dialog\"><img src=\"\" /></a>\n  </div>\n  <div class=\"paint_description\">\n  \n  </div>\n\n  <button class=\"btn\">Use This</a>\n</div>";
 
-      PaintingManager.prototype.paid_html = "<div class=\"paint\">\n  <div class=\"paint_image\">\n    <img src=\"\" />\n  </div>\n  <div class=\"paint_description\">\n    \n  </div>\n  <div class=\"paint_price\"></div>\n  <button>Use This</button>\n</div>";
+      PaintingManager.prototype.paid_html = "<div class=\"paint\">\n  <div class=\"paint_image\">\n    <img src=\"\" />\n  </div>\n  <div class=\"paint_description\">\n    \n  </div>\n  <div class=\"paint_price\"></div>\n  <button class=\"btn\">Use This</a>\n</div>";
 
       PaintingManager.prototype.add_free = function(paint) {
         var new_paint;
