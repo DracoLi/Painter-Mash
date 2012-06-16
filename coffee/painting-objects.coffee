@@ -64,3 +64,21 @@ $ ->
     objectManager.add_free paint
   for paint in objects.paid_objects
     objectManager.add_paid paint
+    
+  console.log 'binding'
+  # handle navigation
+  $('#objectsView').click ->
+    $('#paintingsView').hide()
+    $('#objectsView').show()
+    $('#stage').hide()
+    console.log 'objectsView'
+  $('#paintingsView').click ->
+    $('#paintingsView').show()
+    $('#objectsView').hide()
+    $('#stage').hide()
+    console.log 'paintingsView'
+  window.revertNavigation = ->
+    $('#paintingsView').hide()
+    $('#objectsView').hide()
+    $('#stage').show()
+    console.log 'revertNavigation'

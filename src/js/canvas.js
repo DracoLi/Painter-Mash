@@ -2,9 +2,9 @@ window.onload = function() {
 	//var context = canvas.getContext("2d");
 	
 	initialize();
-	addBackground("miro_normal");
-	addImage("miro_icon");
-	addImage("rothko_icon");
+	addBackground("miro");
+	addImage("miro");
+	addImage("rothko");
   
   $('#shareButton').click(function() {
     window.exportImage();
@@ -27,6 +27,7 @@ function initialize() {
 	draw = true;
 	loadStage();
 	canvas = layer.getCanvas();
+	$('canvas').css("position", "inherit");
 	context = canvas.getContext("2d");
 	canvas.addEventListener('mousedown', startPaint, false);
 	canvas.addEventListener('mousemove', continuePaint, false);
@@ -35,14 +36,15 @@ function initialize() {
 }
 
 function loadStage() {
-	stage = new Kinetic.Stage("stage", 320, 480);
+	stage = new Kinetic.Stage("innerStage", 320, 480);
+	
         layer = new Kinetic.Layer();
 	stage.add(layer);
 }
 
 window.addImage = function(imageName) {
 	var imageObj = new Image();
-	imageObj.src = "resources/" + imageName + ".png"
+	imageObj.src = "resources/" + imageName + "_normal.png"
 
        var kinImgObject = new Kinetic.Image({
 	       image: imageObj,
@@ -67,13 +69,15 @@ window.addImage = function(imageName) {
 	layer.add(kinImgObject);
 	stage.clear();
 	stage.add(layer);
+	
+	window.revertNavigation();
 }
 
 window.addBackground = function(imageName) {
 	$("#other").hide();
 	$("#stage").show();
 	var imageObj = new Image();
-	imageObj.src = "resources/" + imageName + ".png"
+	imageObj.src = "resources/" + imageName + "_normal.png"
 
        var kinImgObject = new Kinetic.Image({
 	       image: imageObj,
@@ -89,16 +93,18 @@ window.addBackground = function(imageName) {
 	layer.add(kinImgObject);
 	stage.clear();
 	stage.add(layer);
+	
+	window.revertNavigation();
 }
 
 
 window.exportImage = function() {
 	var canvas = layer.getCanvas();
-	var canvasData = canvas.getDataURL();
+	var canvasData = canvas.toDataURL();
 	var ajax = new XMLHttpRequest();
 	ajax.open("POST",'http://simple_planet_5852.herokuapp.com/painter',false);
 	ajax.setRequestHeader('Content-Type', 'application/upload');
-	ajax.send("image="+canvasData);
+	//ajax.send("image="+canvasData);
 }
 
 

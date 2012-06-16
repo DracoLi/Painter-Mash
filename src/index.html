@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<link rel="stylesheet" href="css/paintings.css" />
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/canvas.js"></script>
 	<script type="text/javascript" src="js/painting-objects.js"></script>
@@ -15,16 +16,18 @@
 
 <div data-role="page">
 	<div data-role="header">
-		<h1>Hello World!</h1>
+		<h1>Painter Mesh!</h1>
 	</div><!-- /header -->
-	<div data-role="content" style="width=320; height=480">
+	<div data-role="content" style="height: 500px">
 	<!--
 	<canvas id="paint-img" width=320 height=480>
     
 	</canvas>
 	-->
 	  <div id="stage" width=320 height=480>
-	   
+	   <div id="innerStage" style="position: relative;"></div>
+	   <button class="btn" id="openBackground">Pantings</button>
+	   <button class="btn" id="openObjects">Objects</button>
 	   <button class="btn" id="shareButton">Share</button>
 	  </div>
 	  
@@ -51,9 +54,7 @@
 	  </div>
 	</div><!-- /content -->
 	<div data-role="footer">
-		<h4>Get in touch:
-			<a href="mailto:support@trigger.io">support@trigger.io</a>
-		</h4>
+		<h4>Painter Mesh!</h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
