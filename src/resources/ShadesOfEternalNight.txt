@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Hello World!</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+<body>
+
+<div data-role="dialog">
+	
+		<div data-role="header" data-theme="d">
+			<h1>Fifty Days at Iliam: Shades of Eternal Night (1978)</h1>
+		</div>
+
+		<div data-role="content" data-theme="c">
+			<p>Cy Twombly's monumental Fifty Days at Iliam can be read as a memorial series created in the aftermath of the Vietnam War. Alongside commemoration, issues of both violence and law run through the Iliad. Already anachronistic, the archaic civilization of Homer's poem is seen from the perspective of the emerging polis depicted on Vulcan's shield.
+
+<br>Cy Twombly (1928-2011)</br>
+<br>Neo-Expressionism</br></p>
+			<a href="#" data-role="button" data-rel="back" data-theme="b">Sounds good</a>
+			<a href="#" data-role="button" data-rel="back" data-theme="c">Cancel</a>
+		</div>
+	</div>
+
+

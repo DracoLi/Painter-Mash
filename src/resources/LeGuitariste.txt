@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Hello World!</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+<body>
+
+<div data-role="dialog">
+	
+		<div data-role="header" data-theme="d">
+			<h1>Le Guitariste (1910)</h1>
+		</div>
+
+		<div data-role="content" data-theme="c">
+			<p>Le Guitariste was painted in 1910, but it is very difficult to see any guitarist at all. If you look very carefully, you can just about make out an image of a man, and the slightest suggestion of a guitar. It's nothing like the Old Guitarist of the Blue Period.
+
+<br>Pablo Picasso (1881-1973)</br>
+<br>Cubism, Classicism, Surrealism</br></p>
+			<a href="#" data-role="button" data-rel="back" data-theme="b">Sounds good</a>
+			<a href="#" data-role="button" data-rel="back" data-theme="c">Cancel</a>
+		</div>
+	</div>
+
+

@@ -32,10 +32,16 @@
     })();
     objects = new Objects;
     objects.add_free('MonaLisa');
+    objects.add_free('MonaLisaHead');
     objects.add_free('TheScream');
+    objects.add_free('TheScreamHead');
     objects.add_free('BalloonGirl');
+    objects.add_free('BalloonGirlJustGirl');
+    objects.add_free('BalloonGirlJustBalloon');
     objects.add_paid('SonOfMan', "20M");
+    objects.add_free('SonOfManHead');
     objects.add_paid('GirlWithPearlEarring', "30M");
+    objects.add_free('GirlWithPearlEarringHead');
     ObjectsManager = (function() {
 
       function ObjectsManager() {}
@@ -102,6 +108,9 @@
       $('#objectsView').hide();
       $('#stage').hide();
       return console.log('paintingsView');
+    });
+    $('#shareButton').click(function() {
+      return window.exportImage();
     });
     return window.revertNavigation = function() {
       $('#paintingsView').hide();
