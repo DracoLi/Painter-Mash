@@ -7,6 +7,8 @@
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/canvas.js"></script>
+	<script type="text/javascript" src="js/painting-objects.js"></script>
+	<script type="text/javascript" src="js/paintings.js"></script>
 	<script src="http://www.html5canvastutorials.com/libraries/kinetic-v3.8.0.js"></script>
 </head>
 <body>
@@ -16,13 +18,33 @@
 		<h1>Hello World!</h1>
 	</div><!-- /header -->
 	<div data-role="content" style="width=320; height=480">
-		<a href="paintings.html">Go!</a>
 	<!--
 	<canvas id="paint-img" width=320 height=480>
     
 	</canvas>
 	-->
-	<div id="stage" width=320 height=480></div>
+	  <div id="stage" width=320 height=480></div>
+	  
+	  <div id="objectsView">
+	    <section id="free_objects">
+  		  <h1>Free Objects</h1>
+  		  <div class="objects clearfix"></div>
+  		</section>
+  		<section id="paid_objects">
+        <h1>Paid Objects</h1>
+  		  <div class="objects clearfix"></div>
+      </section>
+	  </div>
+	  <div id="paintingsView">
+	    <section id="free_paintings">
+  		  <h1>Free Paintings</h1>
+  		  <div class="paintings clearfix"></div>
+  		</section>
+  		<section id="paid_paintings">
+        <h1>Paid Paintings</h1>
+  		  <div class="paintings clearfix"></div>
+      </section>
+	  </div>
 	</div><!-- /content -->
 	<div data-role="footer">
 		<h4>Get in touch:
