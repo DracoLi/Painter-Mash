@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Painter Mash</string>
+    <string name="package_name">io.trigger.forgee6358e3cb7c411e1aee212313d1adcbe</string>
+    <string name="payments_publicKey">PAYMENTS_PUBLIC_KEY_HERE</string>
+</resources>
