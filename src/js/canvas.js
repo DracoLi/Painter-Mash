@@ -2,7 +2,6 @@ window.onload = function() {
 	//var context = canvas.getContext("2d");
 	
 	initialize();
-	
 	addBackground("TheHumanCondition");
   
   $('#shareButton').click(function() {
@@ -25,17 +24,22 @@ function initialize() {
 	buttonDown = false;
 	draw = true;
 	loadStage();
+	pts = new Array();
 	canvas = layer.getCanvas();
 	$('canvas').css("position", "inherit");
 	context = canvas.getContext("2d");
 	canvas.addEventListener('mousedown', startPaint, false);
 	canvas.addEventListener('mousemove', continuePaint, false);
 	canvas.addEventListener('mouseup', stopPaint, false);
+	//canvas.addEventListener('touchstart', startPaint, false);
+	//canvas.addEventListener('touchmove', continuePaint, false);
+	//canvas.addEventListener('touchend', stopPaint, false);
+
 
 }
 
 function loadStage() {
-	stage = new Kinetic.Stage("innerStage", 320, 480);
+	stage = new Kinetic.Stage("container", 320, 480);
 	
         layer = new Kinetic.Layer();
 	stage.add(layer);
@@ -120,6 +124,9 @@ function startPaint(evt) {
 		context.beginPath();
 		context.moveTo(evt.x, evt.y);
 		buttonDown = true;
+		pts = new Array();
+		pts.push(evt.x);
+		pts.push(evt.y);
 	}            
 	evt.preventDefault();
 }
@@ -130,11 +137,18 @@ function continuePaint(evt) {
 	{                            
 		context.lineTo(evt.x,evt.y);
 		context.stroke();
+		pts.push(evt.x);
+		pts.push(evt.y);
+		//var line = new Kinetic.Line({ points: pts});
+		//layer.add(line);		
+		//stage.clear();
+		//stage.add(layer);
 	}
 }
 
 function stopPaint(evt) {
 	buttonDown =false;
+	
 }
 
 /*
