@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Hello World!</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+<body>
+
+<div data-role="dialog">
+	
+		<div data-role="header" data-theme="d">
+			<h1>The Scream (Head)(1893)</h1>
+		</div>
+
+		<div data-role="content" data-theme="c">
+			<p>The Scream shows a figure with an agonized expression against a landscape with a tumultuous red sky. The landscape in the background is the Oslofjord, viewed from Ekeberg, Oslo, Norway. It was sold for $119,922,500 at Sotheby's art auction. For this reason, The Scream has been the target of several high-profile art thefts. In 1994, the version in the National Gallery was stolen. It was recovered several months later. In 2004, both The Scream and Madonna were stolen from the Munch Museum, and recovered two years later.  <br>Edvard Munch (1863-1944)</br>  <br>Symbolism (Late 19th century)</br>
+</p>
+			<a href="#" data-role="button" data-rel="back" data-theme="b">Sounds good</a>
+			<a href="#" data-role="button" data-rel="back" data-theme="c">Cancel</a>
+		</div>
+	</div>
+

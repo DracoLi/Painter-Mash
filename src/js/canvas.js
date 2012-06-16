@@ -3,9 +3,9 @@ window.onload = function() {
 	
 	initialize();
 	
-	addBackground("miro");
-	addImage("miro");
-	addImage("rothko");
+	addBackground("TheHumanCondition");
+	addImage("MonaLisa");
+	addImage("TheScream");
   
   $('#shareButton').click(function() {
     window.exportImage();
@@ -100,14 +100,17 @@ window.addBackground = function(imageName) {
 
 
 window.exportImage = function() {
-	var canvas = layer.getCanvas();
-	var canvasData = canvas.toDataURL();
-	var ajax = new XMLHttpRequest();
-	ajax.open("POST",'http://simple_planet_5852.herokuapp.com/painter',false);
-	ajax.setRequestHeader('Content-Type', 'application/upload');
-	//ajax.send("image="+canvasData);
+  var canvasData = canvas.toDataURL();
+  $.ajax({
+    url: "http://simple-planet-5852.herokuapp.com/painter",
+    data: { "image": canvasData },
+    success: function(response) {
+      $.get("http://simple-planet-5852.herokuapp.com/painter");
+      $('<iframe src="http://simple-planet-5852.herokuapp.com/painter"></iframe>').appendTo($('body'));
+      console.log(response);
+    }
+  });
 }
-
 
 function startPaint(evt) {
 	if(!buttonDown && draw)

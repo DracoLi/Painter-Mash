@@ -11,10 +11,16 @@ $ ->
       @paid_objects.push paint
   objects = new Objects
   objects.add_free 'MonaLisa'
+  objects.add_free 'MonaLisaHead'
   objects.add_free 'TheScream'
+  objects.add_free 'TheScreamHead'
   objects.add_free 'BalloonGirl'
+  objects.add_free 'BalloonGirlJustGirl'
+  objects.add_free 'BalloonGirlJustBalloon'
   objects.add_paid 'SonOfMan', "20M"
+  objects.add_free 'SonOfManHead'
   objects.add_paid 'GirlWithPearlEarring', "30M"
+  objects.add_free 'GirlWithPearlEarringHead'
   
   class ObjectsManager
     free_selector: $('#free_objects .objects')
@@ -76,6 +82,9 @@ $ ->
     $('#objectsView').hide()
     $('#stage').hide()
     console.log 'paintingsView'
+  $('#shareButton').click ->
+    window.exportImage()
+    
   window.revertNavigation = ->
     $('#paintingsView').hide()
     $('#objectsView').hide()

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Hello World!</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+<body>
+
+<div data-role="dialog">
+	
+		<div data-role="header" data-theme="d">
+			<h1>Fugue (2003)</h1>
+		</div>
+
+		<div data-role="content" data-theme="c">
+			<p><br>The blood-red spirals are part of a 19-part series based on coloured pencil and ink drawings done on music-paper. The title Fugue stands for the way in which the elements of the image are altered, repeated and brought together with each other. 
+</br>
+<br>Louise Bourgeois (1911 – 2010)</br></p>
+			<a href="#" data-role="button" data-rel="back" data-theme="b">Sounds good</a>
+			<a href="#" data-role="button" data-rel="back" data-theme="c">Cancel</a>
+		</div>
+	</div>
+
+
+
+
+
+

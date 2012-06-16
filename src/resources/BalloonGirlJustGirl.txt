@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Hello World!</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+<body>
+
+<div data-role="dialog">
+	
+		<div data-role="header" data-theme="d">
+			<h1>Balloon Girl (Just Girl)(2002)</h1>
+		</div>
+
+		<div data-role="content" data-theme="c">
+			<p>The image featured a stencil of a young girl reaching out for a balloon, a heart, that was floating away in the distance. This piece is also sometimes accompanied by the words "There is always hope". Banksy, world's most popular street artist, shows us this young innocent girl standing alone. He shows us this in black and white. Then we see her reaching for her red balloon or her heart. We know she can't get it back and we all remember that feeling of losing something we love dearly. Something we love just for the sheer innocence and fun of it.  <br>Banksy (year of birth unknown - present)</br> <br>Graffiti Art</br>
+</p>
+			<a href="#" data-role="button" data-rel="back" data-theme="b">Sounds good</a>
+			<a href="#" data-role="button" data-rel="back" data-theme="c">Cancel</a>
+		</div>
+	</div>
+
