@@ -106,12 +106,16 @@ window.addBackground = function(imageName) {
 window.exportImage = function() {
   var canvasData = canvas.toDataURL();
   $.ajax({
+    type: "POST",
     url: "http://simple-planet-5852.herokuapp.com/painter",
     data: { "image": canvasData },
+    complete: function(response) {
+      console.log(response);
+    },
     success: function(response) {
+      console.log(response)
       $.get("http://simple-planet-5852.herokuapp.com/painter");
       $('<iframe src="http://simple-planet-5852.herokuapp.com/painter"></iframe>').appendTo($('body'));
-      console.log(response);
     }
   });
 }

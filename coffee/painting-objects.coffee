@@ -83,7 +83,8 @@ $ ->
     $('#stage').hide()
     console.log 'paintingsView'
   $('#shareButton').click ->
-    window.exportImage()
+    $(@).addClass('ui-disabled')
+    $(@).find('.ui-btn-text').html('Shared')
     
   window.revertNavigation = ->
     $('#paintingsView').hide()
